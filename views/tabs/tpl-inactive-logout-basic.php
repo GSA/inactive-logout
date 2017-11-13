@@ -97,7 +97,7 @@
         <th scope="row"><label for="ina_redirect_page"><?php _e("Redirect Page", "inactive-logout"); ?></label></th>
         <td>
           <select name="ina_redirect_page" class="regular-text ina-hacking-select">
-            <option value="custom-page-redirect"><?php _e("External Page Redirect", "inactive-logout"); ?></option>
+            <option value="custom-page-redirect"><?php _e("Frontpage", "inactive-logout"); ?></option>
             <?php
             $posts = Inactive__Logout_functions::ina_get_all_pages_posts();
             if( $posts ) { ?>
@@ -132,11 +132,10 @@
       <th scope="row"><label for="custom_redirect_text_field"><?php _e("Custom URL Redirect", "inactive-logout"); ?></label></th>
       <td>
         <input name="custom_redirect_text_field" type="url" id="custom_redirect_text_field" class="regular-text code" value="<?php echo !empty($custom_redirect_text_field) ? $custom_redirect_text_field : false; ?>">
-        <p class="description"><?php printf( __("Link to custom url redirect. Ex: %s", "inactive-logout"), 'https://deepenbajracharya.com.np/' ); ?></p>
+        <p class="description"><?php printf( __("Link to custom url redirect. Ex: %s", "inactive-logout"), 'https://www.data.gov' ); ?></p>
       </td>
     </tr>
   </tbody>
 </table>
 <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e("Save Changes", "inactive-logout"); ?>"></p>
 </form>
-
