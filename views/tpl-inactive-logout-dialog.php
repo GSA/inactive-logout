@@ -67,7 +67,7 @@ $bg = isset($ina_warn_message_enabled) ? $ina_popup_overlay_color : FALSE;
 				$message_content = get_option( '__ina_logout_message' );
 			}
 			?>
-			<?php echo apply_filters( 'the_content', $message_content ); ?>
+			<?php echo $message_content; ?>
 			<p class="ina-dp-noflict-btn-container"><a class="button button-primary ina_stay_logged_in" href="javascript:void(0);"><?php _e('Continue', 'inactive-logout'); ?> <span class="ina_countdown"></span></a></p>
 		</div>
 	</div>
