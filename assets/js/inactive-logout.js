@@ -50,7 +50,7 @@ function goInactive() {
       //Update Last Active Status
       var postData = { action: 'ina_checklastSession', do: 'ina_updateLastSession', security: ina_ajax.ina_security, timestamp: timestamp };
       $.post( ina_ajax.ajaxurl, postData ).done(function(response) {
-        console.log("Last Active on: " + Date.now());
+        //console.log("Last Active on: " + Date.now());
         var browserTabID = localStorage.getItem("ina__browserTabID");
         if( browserTabID == tabID ) {
           timeoutMessage = window.setTimeout(showTimeoutMessage, timeout_defined);
