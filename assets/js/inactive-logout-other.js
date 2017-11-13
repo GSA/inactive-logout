@@ -117,3 +117,6 @@ jQuery(function($) {
     }
   });
 });
+jQuery( document ).ready(function() {
+    jQuery(".ina-hacking-select").show();
+});

@@ -97,7 +97,7 @@
         <th scope="row"><label for="ina_redirect_page"><?php _e("Redirect Page", "inactive-logout"); ?></label></th>
         <td>
           <select name="ina_redirect_page" class="regular-text ina-hacking-select">
-            <option value="custom-page-redirect"><?php _e("Frontpage", "inactive-logout"); ?></option>
+            <option value="custom-page-redirect"><?php _e("External Page Redirect", "inactive-logout"); ?></option>
             <?php
             $posts = Inactive__Logout_functions::ina_get_all_pages_posts();
             if( $posts ) { ?>
