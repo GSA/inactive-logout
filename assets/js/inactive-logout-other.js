@@ -41,7 +41,7 @@ jQuery(function($) {
   //FOR REDIRECT CHECKBOX
   if( $('#ina_enable_redirect_link').is(":checked") ) {
     $('.show_on_enable_redirect_link').show();
-    $('.ina_hide_message_content').hide();
+    //$('.ina_hide_message_content').hide();
 
     if( $('select[name=ina_redirect_page]').val() == "custom-page-redirect" ) {
       $('.show_cutom_redirect_textfield').show();
@@ -50,14 +50,14 @@ jQuery(function($) {
     }
   } else {
     $('.show_on_enable_redirect_link').hide();
-    $('.ina_hide_message_content').show();
+    //$('.ina_hide_message_content').show();
     $('.show_cutom_redirect_textfield').hide();
   }
 
   $('#ina_enable_redirect_link').click(function() {
     if( $( this ).prop( "checked" )) {
       $('.show_on_enable_redirect_link').show();
-      $('.ina_hide_message_content').hide();
+      //$('.ina_hide_message_content').hide();
 
       if( $('select[name=ina_redirect_page]').val() == "custom-page-redirect" ) {
         $('.show_cutom_redirect_textfield').show();
@@ -66,7 +66,7 @@ jQuery(function($) {
       }
     } else {
       $('.show_on_enable_redirect_link').hide();
-      $('.ina_hide_message_content').show();
+      //$('.ina_hide_message_content').show();
       $('.show_cutom_redirect_textfield').hide();
     }
   });

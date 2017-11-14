@@ -107,6 +107,8 @@ function showTimeoutMessage() {
           $('#ina__dp_logout_message_box .ina-dp-noflict-modal-body').html( '<p>' + op.msg + '<p><p class="ina-dp-noflict-btn-container"><a class="btn-timeout" href="javascript:void(0);" onclick="window.location.reload();">OK</a></p>' );
         }
         return false;
+      }).fail(function(xhr, status, error){
+        $('#ina__dp_logout_message_box .ina-dp-noflict-modal-body').html( '<p>Your session has expired.<p><p class="ina-dp-noflict-btn-container"><a class="btn-timeout" href="'+location.protocol+'//'+location.host+'">OK</a></p>' );
       });
     } else {
       $('#ina__dp_logout_message_box').show();
@@ -120,14 +122,16 @@ function showTimeoutMessage() {
           clearTimeout(setting_countdown);
           var postData = { action: 'ina_checklastSession', do: 'ina_logout', security: ina_ajax.ina_security };
           $.post( ina_ajax.ajaxurl, postData).done(function(response) {
-            var op = $.parseJSON(response);
-            if( op.redirect_url ) {
-              window.location = op.redirect_url;
-            } else {
-              $('#ina__dp_logout_message_box .ina-dp-noflict-modal-body').html( '<p>' + op.msg + '<p><p class="ina-dp-noflict-btn-container"><a class="btn-timeout" href="javascript:void(0);" onclick="window.location.reload();">OK</a></p>' );
-            }
-            return false;
-          });
+              var op = $.parseJSON(response);
+              if( op.redirect_url ) {
+                window.location = op.redirect_url;
+              } else {
+                $('#ina__dp_logout_message_box .ina-dp-noflict-modal-body').html( '<p>' + op.msg + '<p><p class="ina-dp-noflict-btn-container"><a class="btn-timeout" href="javascript:void(0);" onclick="window.location.reload();">OK</a></p>' );
+              }
+              return false;
+            }).fail(function(xhr, status, error){
+              $('#ina__dp_logout_message_box .ina-dp-noflict-modal-body').html( '<p>Your session has expired.<p><p class="ina-dp-noflict-btn-container"><a class="btn-timeout" href="'+location.protocol+'//'+location.host+'">OK</a></p>' );
+            });
         }
       }, 1000);
 
