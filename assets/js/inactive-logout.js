@@ -95,8 +95,8 @@ function showTimeoutMessage() {
         messageBox = 0;
       });
     } else if(ina_disable_countdown) {
+      $('#ina__dp_logout_message_box .ina-dp-noflict-modal-body').html( '<p>Your session has expired.<p><p class="ina-dp-noflict-btn-container"><a class="btn-timeout" href="'+location.protocol+'//'+location.host+'">OK</a></p>' );
       $('#ina__dp_logout_message_box').show();
-
       //Disabled Countdown but directly logout
       var postData = { action: 'ina_checklastSession', do: 'ina_logout', security: ina_ajax.ina_security };
       $.post( ina_ajax.ajaxurl, postData).done(function(response) {
@@ -119,6 +119,7 @@ function showTimeoutMessage() {
         }
 
         if( t == 0 ) {
+          $('#ina__dp_logout_message_box .ina-dp-noflict-modal-body').html( '<p>Your session has expired.<p><p class="ina-dp-noflict-btn-container"><a class="btn-timeout" href="'+location.protocol+'//'+location.host+'">OK</a></p>' );
           clearTimeout(setting_countdown);
           var postData = { action: 'ina_checklastSession', do: 'ina_logout', security: ina_ajax.ina_security };
           $.post( ina_ajax.ajaxurl, postData).done(function(response) {
